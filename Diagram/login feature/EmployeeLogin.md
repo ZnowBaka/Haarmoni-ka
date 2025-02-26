@@ -17,10 +17,10 @@ sequenceDiagram
     participant Employee
     participant System
 
-    System->>Employee: telling Employee to login
+    System->>Employee: Telling Employee to login
     Employee->>System: Enters Username and Password
     System->>System: Validate login
-    alt login is currect
+    alt login is correct
         System-->>Employee: logged in
     else login incorrect
         System->>Employee: Retry
