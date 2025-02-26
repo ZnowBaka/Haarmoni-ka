@@ -17,8 +17,40 @@ service booked
 sequenceDiagram
     participant Employee
     participant System
-        
-        
+    
+    Employee->>System: Click Book service
+    System->>Employee: Booking screen
+    Employee->>System: enters customer info
+    Employee->>System: selects service
+    Employee->>System: select timeslot and barber
+    System->>Employee: Shows Price
+    Employee->>System: click book
+    System->>Employee: booking confirmed
+    
+   ```
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    actor EmployeeInput
+    participant SystemView
+    participant Employee
+    participant Costumer
+    participant EmployeeSelectionController
+    participant BookingController
+    participant DbController
+    participant Db
+    
+    EmployeeInput->>EmployeeSelectionController: BookAppointment()
+    EmployeeSelectionController->>BookingController: ChangeScene()
+    BookingController->>SystemView: 'SceneChange'
+    
+```
+
+
+
+
 
 
 
