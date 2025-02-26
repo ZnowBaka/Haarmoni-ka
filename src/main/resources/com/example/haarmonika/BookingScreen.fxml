@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.haarmonika.HelloController"
+            prefHeight="360.0" prefWidth="640.0">
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haarmonika.HelloController">
-   <children>
-      <DatePicker layoutX="125.0" layoutY="67.0" />
-      <ChoiceBox layoutX="125.0" layoutY="103.0" prefHeight="25.0" prefWidth="174.0" />
-      <ChoiceBox layoutX="125.0" layoutY="141.0" prefHeight="25.0" prefWidth="174.0" />
-      <Label layoutX="30.0" layoutY="71.0" text="Chose date " />
-      <Label layoutX="30.0" layoutY="107.0" text="Chose Service" />
-      <Label layoutX="30.0" layoutY="145.0" text="Preferred Barber" />
-      <TableView layoutX="320.0" layoutY="62.0" prefHeight="250.0" prefWidth="294.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-      <Label layoutX="125.0" layoutY="179.0" prefHeight="17.0" prefWidth="174.0" text="Service price: " />
-      <Button layoutX="125.0" layoutY="196.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Book Service" />
-   </children>
 </AnchorPane>
