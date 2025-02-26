@@ -1,11 +1,11 @@
 package com.example.haarmonika;
 
-import com.example.haarmonika.Model.User;
+import com.example.haarmonika.Model.Person;
 
 public final class LoggedInUser {
 
     private static LoggedInUser INSTANCE;
-    private User currentUser;
+    private Person currentUser;
 
     private LoggedInUser() {
     }
@@ -18,12 +18,13 @@ public final class LoggedInUser {
     }
 
     // getters and setters
-    public User getCurrentUser() {
+    public Person getCurrentUser() {
         return currentUser;
     }
 
-    public void setCurrentUser(User currentUser) {
+    public void setCurrentUser(Person currentUser) {
         this.currentUser = currentUser;
     }
+
 
 }// End

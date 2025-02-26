@@ -1,6 +1,6 @@
 package com.example.haarmonika.Model;
 
-public class User {
+public class Person {
     private int id;
     private String firstName;
     private String lastName;
@@ -9,7 +9,7 @@ public class User {
     private String password;
 
 
-    public User(int id, String firstName, String lastName, String email, String phoneNumber, String password) {
+    public Person(int id, String firstName, String lastName, String email, String phoneNumber, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -12,11 +12,11 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
-        try{
-            Parent root = FXMLLoader.load(getClass().getResource("Hello-view.fxml"));
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("TidrejseAgenturet");
+            primaryStage.setTitle("login screen");
             primaryStage.setWidth(640);
             primaryStage.setHeight(360);
             primaryStage.show();
@@ -26,25 +26,9 @@ public class HelloApplication extends Application {
         }
     }
 
-    /*
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 360);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-     */
-
-
-
-
-
-
-
-
 
     public static void main(String[] args) {
         // start test here
-
         launch();
     }// main End
 }// End

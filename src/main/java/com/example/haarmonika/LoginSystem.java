@@ -1,17 +1,12 @@
 package com.example.haarmonika;
 
-import com.example.haarmonika.Model.User;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import com.example.haarmonika.Model.Person;
 
 public final class LoginSystem {
 
     private static LoginSystem instance;
     private short maxLoginAttempts;
-    private User user;
+    private Person person;
     private String userLogin;
     private String password;
 
@@ -41,12 +36,12 @@ public final class LoginSystem {
         this.maxLoginAttempts = maxLoginAttempts;
     }
 
-    public User getUser() {
-        return user;
+    public Person getUser() {
+        return person;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(Person person) {
+        this.person = person;
     }
 
     public String getUserLogin() {
@@ -66,7 +61,9 @@ public final class LoginSystem {
     }
 
     // Methods
+    /*
     public boolean login (String username, String password) {
+
         String sql = "SELECT * FROM employees WHERE username = ? AND password = ?";
 
         try (Connection connection = DriverManager.getConnection();
@@ -93,7 +90,7 @@ public final class LoginSystem {
             return true;
         }
     }
-
+    */
 
 
 
