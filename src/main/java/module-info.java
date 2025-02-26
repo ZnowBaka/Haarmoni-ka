@@ -10,7 +10,12 @@ module com.example.haarmonika {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
 
     opens com.example.haarmonika to javafx.fxml;
     exports com.example.haarmonika;
+    exports com.example.haarmonika.Model;
+    opens com.example.haarmonika.Model to javafx.fxml;
+    exports com.example.haarmonika.Controller;
+    opens com.example.haarmonika.Controller to javafx.fxml;
 }
