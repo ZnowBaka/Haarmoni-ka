@@ -29,4 +29,25 @@ sequenceDiagram
         System->>Employee: Retry
     end
 ```
+```mermaid
+sequenceDiagram
+    participant User
+    participant LoginSystem
+    participant Databaserepo
+    participant Database
+
+    User->>LoginSystem: login(username, password)
+    LoginSystem->>Databaserepo: Checklogin
+    Databaserepo->Database: SELECT * FROM employees WHERE username = ? AND password = ?
+    Database-->>Databaserepo: Returnes user 
+    Databaserepo-->> LoginSystem: Resultset (user found or not)
+    
+    
+    
+    alt Login Successful
+        LoginSystem-->>User:  Login successful
+    else Login Failed
+        LoginSystem-->>User:  Login failed
+    end
+```
 

@@ -68,29 +68,11 @@ public final class LoginSystem {
 
 
     // Methods
-    public boolean login(String username, String password) {
-
-        String sql = "SELECT * FROM employees WHERE username = ? AND password = ?";
-
-        try (Connection connection = DriverManager.getConnection(sql);
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-
-            preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            // retunere succes hvis user og pass stemmer overens
-            return resultSet.next();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false; // ved fejl retunere false
-        }
-    }
 
 
-    public boolean checkLogin(String username, String password) {
-        if (login(username, password) != true) {
+
+    public boolean checkLogin(String Email, String password) {
+        if (!Datarepo.login(Email, password)) {
             return false;
         } else {
             return true;

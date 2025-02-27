@@ -52,5 +52,24 @@ public class Datarepo {
         }
         return employees;
     }
+    public static boolean login(String Email, String password) {
+
+        String sql = "SELECT * FROM employees WHERE Email = ? AND password = ?";
+
+        try (Connection connection = DriverManager.getConnection(sql);
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, Email);
+            preparedStatement.setString(2, password);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // retunere succes hvis user og pass stemmer overens
+            return resultSet.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false; // ved fejl retunere false
+        }
+    }
 }
 
