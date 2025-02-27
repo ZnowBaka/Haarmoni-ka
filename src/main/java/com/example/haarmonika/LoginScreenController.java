@@ -73,7 +73,7 @@ public class LoginScreenController {
 
     // Method to handle login
 
-
+/*
     @FXML
     public void switchToBookingScreen(ActionEvent event) throws IOException {
         storeLoggedInPersonAsCurrentUser(loggedInUser, person);
@@ -86,11 +86,11 @@ public class LoginScreenController {
 
 
     // When the LoginSystem has confirmed that a login is successful, we then store the users data
-    public void storeLoggedInPersonAsCurrentUser(LoggedInUser loggedInUser, Person person) throws IOException {
+   public void storeLoggedInPersonAsCurrentUser(LoggedInUser loggedInUser, Person person) throws IOException {
         person = databaseRepo.getUser;
         loggedInUser.setCurrentUser(person);
     }
 
-
+    */
 
 }

@@ -7,7 +7,7 @@ public final class LoggedInUser {
     private static LoggedInUser INSTANCE;
     private Person currentUser;
 
-    private LoggedInUser() {
+    public LoggedInUser() {
     }
 
     public static LoggedInUser getInstance() {

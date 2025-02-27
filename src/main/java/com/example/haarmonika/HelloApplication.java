@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class HelloApplication extends Application {
-    @Override
+   @Override
     public void start(Stage primaryStage) throws IOException {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
@@ -29,29 +29,36 @@ public class HelloApplication extends Application {
 
 
     public static void main(String[] args) {
-        // start test here
         // Create an instance of the LoginSystem
         LoginSystem loginSystem = LoginSystem.getInstance();
 
         // Create a Scanner object for user input
         Scanner scanner = new Scanner(System.in);
+        boolean loggedIn = false;
 
-        // Prompt the user for username and password
-        System.out.print("Enter username: ");
-        String username = scanner.nextLine();
+        while (!loggedIn) {
+            // Prompt the user for username and password
+            System.out.print("Enter username: ");
+            String username = scanner.nextLine();
 
-        System.out.print("Enter password: ");
-        String password = scanner.nextLine();
+            System.out.print("Enter password: ");
+            String password = scanner.nextLine();
 
-        // Attempt to log in
-        if (loginSystem.login(username, password)) {
-            System.out.println("Login successful!");
-            // You can add additional logic here, such as loading the main application
-        } else {
-            System.out.println("Login failed. Please check your username and password.");
+            // Attempt to log in
+            if (loginSystem.login(username, password)) {
+                System.out.println("Login successful!");
+                loggedIn = true; // Set loggedIn to true to exit the loop
+                // You can add additional logic here, such as loading the main application
+            } else {
+                System.out.println("Login failed. Please check your username and password.");
+                System.out.print("Would you like to try again? (yes/no): ");
+                String response = scanner.nextLine();
+                if (!response.equalsIgnoreCase("yes")) {
+                    System.out.println("Exiting the application.");
+                    break; // Exit the loop if the user does not want to try again
+                }
+            }
         }
 
-        // Close the scanner
-        scanner.close();
     }// main End
 }// End

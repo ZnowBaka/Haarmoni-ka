@@ -94,7 +94,7 @@ public final class LoginSystem {
             return false; // ved fejl retunere false
         }
     }
-
+    */
 
     public boolean checkLogin(String username, String password) {
         if (login(username, password) != true) {
@@ -103,7 +103,7 @@ public final class LoginSystem {
             return true;
         }
     }
-    */
+
     public boolean login(String username, String password) {
         return mockDatabase.containsKey(username)&& mockDatabase.get(username).equals(password);
     }
