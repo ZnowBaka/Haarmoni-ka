@@ -2,6 +2,8 @@ package com.example.haarmonika;
 
 import com.example.haarmonika.Model.Person;
 
+import java.sql.*;
+
 public final class LoginSystem {
 
     private static LoginSystem instance;
@@ -67,7 +69,7 @@ public final class LoginSystem {
 
         String sql = "SELECT * FROM employees WHERE username = ? AND password = ?";
 
-        try (Connection connection = DriverManager.getConnection();
+        try (Connection connection = DriverManager.getConnection("");
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, username);

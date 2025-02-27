@@ -33,19 +33,49 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-    actor EmployeeInput
-    participant SystemView
-    participant Employee
-    participant Costumer
-    participant EmployeeSelectionController
+    actor CustomerI/O
+    actor EmployeeI/O
+    participant ViewController
+    participant MessageController
     participant BookingController
-    participant DbController
+    participant CustomerController
+    participant Booking
+    participant Customer
+    participant DbRepo
     participant Db
     
-    EmployeeInput->>EmployeeSelectionController: BookAppointment()
-    EmployeeSelectionController->>BookingController: ChangeScene()
-    BookingController->>SystemView: 'SceneChange'
-    
+    EmployeeI/O->>ViewController: BookService(BTN)
+    EmployeeI/O->>ViewController: BookingI/O
+    ViewController->>CustomerController: newCustomer(customerFirstName, customerLastName, phonenumber, email)
+    CustomerController->>Customer: Customer(customerFirstName, customerLastName, phonenumber, email)
+    Customer-->>CustomerController: return(customer)
+    CustomerController->>DbRepo: saveData(customer)
+    DbRepo->>Db: Query("")
+    alt confirmed
+        Db-->>DbRepo: return(1)
+        DbRepo-->>CustomerController: return(0)
+    else not Confirmed
+        Db-->>DbRepo: return(0)
+        DbRepo-->>CustomerController: return(0)
+    end
+    CustomerController-->>ViewController: return(customer)
+    ViewController->>BookingController: createBooking(timeSlot, barber, service, customer)
+    BookingController->>Booking: Booking(timeSlot, barber, service, customer)
+    Booking-->>BookingController: return(booking)
+    BookingController-->>ViewController: return(booking)
+    BookingController->>DbRepo: saveBooking(booking)
+    DbRepo->>Db: Query("")
+    alt confirmed
+        Db-->>DbRepo: return(1)
+        DbRepo-->>BookingController: return(0)
+    else not Confirmed
+        Db-->>DbRepo: return(0)
+        DbRepo-->>BookingController: return(0)
+    end
+    BookingController-->>MessageController: confirmBooking(booking)
+    MessageController-->>EmployeeI/O: confirmBooking(booking)
+    MessageController-->>CustomerI/O: confirmBooking(booking)
+
 ```
 
 
