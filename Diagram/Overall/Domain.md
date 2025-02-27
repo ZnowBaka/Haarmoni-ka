@@ -4,12 +4,12 @@
 ```mermaid
     classDiagram
 
-        Employee--|>Booking
-        Customer--|>Booking
-        Admin--|>Employee
-        Db<|--Booking
-        Service--|>Booking
-        TimeSlot<|--Booking
+        Employee__--|>Booking__
+        Customer__--|>Booking__
+        Admin_--|>Employee__
+        Db_<|--Booking__
+        Service__--|>Booking__
+        TimeSlot__<|--Booking__
         
                 
 ```
