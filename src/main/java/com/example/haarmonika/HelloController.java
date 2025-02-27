@@ -23,9 +23,6 @@ public class HelloController {
 
 
 
-
-
-
     //region Switch Scene Controls
     @FXML
     public void switchToExampleScene(ActionEvent event) throws IOException {

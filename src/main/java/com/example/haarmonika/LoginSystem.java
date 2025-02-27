@@ -26,6 +26,7 @@ public final class LoginSystem {
         return instance;
     }
 
+
     // Getters and Setters
 
     public short getMaxLoginAttempts() {
@@ -60,9 +61,9 @@ public final class LoginSystem {
         this.password = password;
     }
 
+
     // Methods
-    /*
-    public boolean login (String username, String password) {
+    public boolean login(String username, String password) {
 
         String sql = "SELECT * FROM employees WHERE username = ? AND password = ?";
 
@@ -83,16 +84,13 @@ public final class LoginSystem {
     }
 
 
-    public boolean checkLogin (String username, String password) {
+    public boolean checkLogin(String username, String password) {
         if (login(username, password) != true) {
             return false;
         } else {
             return true;
         }
     }
-    */
-
-
 
 
 }// End

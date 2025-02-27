@@ -1,6 +1,7 @@
 package com.example.haarmonika;
 
 import com.example.haarmonika.Model.Person;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class LoginScreenController {
 
@@ -24,6 +27,9 @@ public class LoginScreenController {
     LoggedInUser loggedInUser = LoggedInUser.getInstance();
     Person person;
 
+
+    @FXML
+    private Label welcomeLabel;
 
     @FXML
     private PasswordField passwordField;
@@ -48,7 +54,6 @@ public class LoginScreenController {
 
 
     // Methode af button click
-    /*
     @FXML
     private void handleLogin() {
         String username = usernameField.getText();
@@ -71,21 +76,21 @@ public class LoginScreenController {
 
     @FXML
     public void switchToBookingScreen(ActionEvent event) throws IOException {
+        storeLoggedInPersonAsCurrentUser(loggedInUser, person);
         root = FXMLLoader.load(getClass().getResource("BookingScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    */
+
 
     // When the LoginSystem has confirmed that a login is successful, we then store the users data
-    /*
-    public void loginCurrentUser(LoggedInUser loggedInUser, Person person) throws IOException {
+    public void storeLoggedInPersonAsCurrentUser(LoggedInUser loggedInUser, Person person) throws IOException {
         person = databaseRepo.getUser;
         loggedInUser.setCurrentUser(person);
     }
-    */
+
 
 
 }
