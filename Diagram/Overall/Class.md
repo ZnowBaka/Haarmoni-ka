@@ -4,36 +4,36 @@
 ```mermaid
     classDiagram
         
-        class Employee{
+        class Employee__{
             
         }
-        class Customer{
+        class Customer__{
             
         }
-        class Service{
-            -serviceId : int
-            -serviceName : String
-            -serviceDescription : String
-            -service : double
-            +Service(service:int, serviceName:String, serviceDescription:String, servicePrice:double)
+        class Service__{
+            -serviceId : int___
+            -serviceName : String_____
+            -serviceDescription : String______
+            -service : double____
+            +Service(service:int, serviceName:String, serviceDescription:String, servicePrice:double__________________)
         }
-        class Timeslot{
+        class Timeslot__{
             
         }
-        class User{
-            -id : int
-            -firstName : String
-            -lastName : String
-            -email : String
-            -phoneNumber : String
-            -password : String
-            +User(id:int, firstName:String, lastName:String, email:String, phonenumber:String, password:String)
+        class User_{
+            -id : int__
+            -firstName : String____
+            -lastName : String____
+            -email : String____
+            -phoneNumber : String_____
+            -password : String____
+            +User(id:int, firstName:String, lastName:String, email:String, phonenumber:String, password:String_____________________)
             
         }
-        class AdminUser{
+        class AdminUser__{
             
         }
-        class MessageRepository{
+        class MessageRepository____{
             
         }
         

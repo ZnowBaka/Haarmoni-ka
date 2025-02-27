@@ -8,7 +8,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haarmonika.HelloController">
    <children>
       <Label layoutX="42.0" layoutY="62.0" prefHeight="17.0" prefWidth="87.0" text="Chose Day" />
@@ -16,18 +15,19 @@
       <Label layoutX="42.0" layoutY="135.0" text="Chose Service" />
       <Label layoutX="42.0" layoutY="172.0" text="Preferred Barber" />
       <Label layoutX="153.0" layoutY="206.0" prefHeight="17.0" prefWidth="174.0" text="Service Price: " />
-      <DatePicker layoutX="153.0" layoutY="58.0" />
-      <ChoiceBox layoutX="153.0" layoutY="96.0" prefHeight="25.0" prefWidth="174.0" />
-      <ChoiceBox layoutX="153.0" layoutY="131.0" prefHeight="25.0" prefWidth="174.0" />
-      <ChoiceBox layoutX="153.0" layoutY="168.0" prefHeight="25.0" prefWidth="174.0" />
-      <Button layoutX="153.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Book Service" />
-      <TableView layoutX="343.0" layoutY="62.0" prefHeight="186.0" prefWidth="278.0">
+      <DatePicker fx:id="bookingScreenDatePicker" layoutX="153.0" layoutY="58.0" />
+      <ChoiceBox fx:id="bookingScreenChoseTimeslotBox" layoutX="153.0" layoutY="96.0" prefHeight="25.0" prefWidth="174.0" />
+      <ChoiceBox fx:id="bookingScreenChoseServiceBox" layoutX="153.0" layoutY="131.0" prefHeight="25.0" prefWidth="174.0" />
+      <ChoiceBox fx:id="bookingScreenChosePreferredBarberBox" layoutX="153.0" layoutY="168.0" prefHeight="25.0" prefWidth="174.0" />
+      <Button layoutX="153.0" layoutY="223.0" mnemonicParsing="false" onAction="#onBookingScreenBookServiceButtonClick" prefHeight="25.0" prefWidth="174.0" text="Book Service" />
+      <TableView fx:id="bookingScreenTableView" layoutX="343.0" layoutY="62.0" prefHeight="186.0" prefWidth="278.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="75.0" text="Timeslot" />
+          <TableColumn prefWidth="75.0" text="Barber" />
         </columns>
       </TableView>
-      <Label layoutX="343.0" layoutY="29.0" text="Time slots on chosen day" />
-      <Label layoutX="343.0" layoutY="46.0" text="Available Babers on chosen Timeslot" />
+      <Label layoutX="343.0" layoutY="248.0" text="Time slots on chosen day" />
+      <Label layoutX="343.0" layoutY="265.0" text="Available Babers on chosen Timeslot" />
+      <Button layoutX="507.0" layoutY="17.0" mnemonicParsing="false" onAction="#onBackToMainMenuClick" text="Back to Main menu" />
    </children>
 </AnchorPane>

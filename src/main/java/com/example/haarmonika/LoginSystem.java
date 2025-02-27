@@ -2,7 +2,10 @@ package com.example.haarmonika;
 
 import com.example.haarmonika.Model.Person;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public final class LoginSystem {
 
@@ -69,7 +72,7 @@ public final class LoginSystem {
 
         String sql = "SELECT * FROM employees WHERE username = ? AND password = ?";
 
-        try (Connection connection = DriverManager.getConnection("");
+        try (Connection connection = DriverManager.getConnection(sql);
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, username);

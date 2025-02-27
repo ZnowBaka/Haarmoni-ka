@@ -18,5 +18,6 @@
       </Button>
       <Label fx:id="welcomeLabel" layoutX="227.0" layoutY="81.0" text="Welcome to Hårmonka Hair Saloon" />
       <Label fx:id="loginScreenLabel" layoutX="227.0" layoutY="50.0" prefHeight="17.0" prefWidth="187.0" text=" " />
+      <Button layoutX="550.0" layoutY="14.0" mnemonicParsing="false" onAction="#onExitButtonClick" text="Exit System" />
    </children>
 </AnchorPane>
