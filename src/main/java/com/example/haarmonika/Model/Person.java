@@ -8,7 +8,7 @@ public class Person {
     private String phoneNumber;
     private String password;
 
-
+    // Full persson constructor for employees and admins
     public Person(int id, String firstName, String lastName, String email, String phoneNumber, String password) {
         this.id = id;
         this.firstName = firstName;
@@ -16,6 +16,10 @@ public class Person {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
+    }
+
+    // Trimmed down constructor for Customers
+    public Person(int id, String firstName, String lastName, String email) {
     }
 
 
