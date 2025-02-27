@@ -50,10 +50,13 @@ public class LoginScreenController {
         loginScreenLabel.setText("Trying to login...");
     }
 
+    @FXML
+    public void onExitButtonClick() {
+        stage.close();
+    }
 
 
-
-    // Methode af button click
+    // Method to handle login
     @FXML
     private void handleLogin() {
         String username = usernameField.getText();
@@ -71,9 +74,9 @@ public class LoginScreenController {
     }
 
 
-    // Method to handle login
 
 
+    /*
     @FXML
     public void switchToBookingScreen(ActionEvent event) throws IOException {
         storeLoggedInPersonAsCurrentUser(loggedInUser, person);
@@ -90,7 +93,7 @@ public class LoginScreenController {
         person = databaseRepo.getUser;
         loggedInUser.setCurrentUser(person);
     }
-
+    */
 
 
 }

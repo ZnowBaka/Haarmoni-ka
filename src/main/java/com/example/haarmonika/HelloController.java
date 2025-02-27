@@ -6,9 +6,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,7 +26,7 @@ public class HelloController {
     Person currentUser = loggedInUser.getCurrentUser();
     Customer customer;
 
-    //region Controls that are shared between screens
+    //region Shared Screen Controls
     @FXML
     public void onLogOutButtonClick(ActionEvent event, Person currentUser) throws IOException {
         resetCurrentUser(currentUser);
@@ -42,15 +45,12 @@ public class HelloController {
     //endregion
 
 
-
-
-    //region EmployeeSelectionScreen
+    //region EmployeeSelectionScreen Controls
     @FXML
     private Label currentUserNameLabel;
 
     @FXML
     private Label currentUserIDLabel;
-
 
 
     //Methods
@@ -61,7 +61,7 @@ public class HelloController {
 
     public void setCurrentUserNameLabel(Person currentUser) {
         currentUserNameLabel.setText("Current User: "
-        + currentUser.getFirstName() + " " + currentUser.getLastName());
+                + currentUser.getFirstName() + " " + currentUser.getLastName());
     }
 
     public void setCurrentUserIDLabel(Person currentUser) {
@@ -69,19 +69,108 @@ public class HelloController {
     }
 
 
+    //endregion
+
+
+    //region EmployeeSchedule Controls
+    @FXML
+    private DatePicker currentUserScheduleDatePicker;
+
+    @FXML
+    private TableView currentUserScheduleTableView;
+
+    public void onCurrentUserScheduleUpdateButtonClick(ActionEvent event) throws IOException {
+
+    }
+    //endregion
+
+
+    //region Booking screen Controls
+    @FXML
+    private DatePicker bookingScreenDatePicker;
+
+    @FXML
+    private ChoiceBox bookingScreenChoseTimeslotBox;
+
+    @FXML
+    private ChoiceBox bookingScreenChoseServiceBox;
+
+    @FXML
+    private ChoiceBox bookingScreenChosePreferredBarberBox;
+
+    @FXML
+    private TableView bookingScreenTableView;
+
+    public void onBookingScreenBookServiceButtonClick(ActionEvent event) throws IOException {
+
+    }
 
     //endregion
 
 
+    //region ChangeBookingScreen Controls
+    @FXML
+    private TableView changeBookingCurrentBookingTableView;
+
+    @FXML
+    private TableView changeBookingDesiredBookingTableView;
+
+    @FXML
+    private DatePicker changeBookingDatePicker;
+
+    @FXML
+    private ChoiceBox changeBookingDesiredBarberChoiceBox;
+
+    @FXML
+    private ChoiceBox changeBookingDesiredServiceChoiceBox;
+
+    @FXML
+    public void onChangeBookingTimeslotButtonClick(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML
+    public void onChangeBookingBarberButtonClick(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML
+    public void onChangeBookingServiceButtonClick(ActionEvent event) throws IOException {
+
+    }
+
+    @FXML
+    public void onChangeBookingButtonClick(ActionEvent event) throws IOException {
+
+    }
+
+    //endregion
 
 
+    //region AdminSelectionScreen Controls
+    @FXML
+    private TableView adminSelectionTableView;
 
+    @FXML
+    public void onAdminSelectionCreateEmployeeButtonClick(ActionEvent event) throws IOException {
 
+    }
 
+    @FXML
+    public void onAdminSelectionModifyEmployeeButtonClick(ActionEvent event) throws IOException {
 
+    }
 
+    @FXML
+    public void onAdminSelectionDeleteEmployeeButtonClick(ActionEvent event) throws IOException {
 
+    }
 
+    @FXML
+    public void onAdminSelectionShowEntireScheduleButtonClick(ActionEvent event) throws IOException {
+
+    }
+    //endregion
 
 
     //region Switch Scene Controls
@@ -138,7 +227,6 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
     }
-
 
 
     //endregion

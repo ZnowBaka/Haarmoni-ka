@@ -6,11 +6,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haarmonika.HelloController">
    <children>
-      <Button layoutX="220.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Create Booked Service" />
-      <Button layoutX="220.0" layoutY="148.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Change Booked Service" />
-      <Button layoutX="220.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Delete Booking" />
-      <Button layoutX="249.0" layoutY="232.0" mnemonicParsing="false" text="View my work Schedule" />
-      <Button layoutX="567.0" layoutY="14.0" mnemonicParsing="false" text="Log Out" />
+      <Button layoutX="220.0" layoutY="105.0" mnemonicParsing="false" onAction="#switchToBookingScreen" prefHeight="25.0" prefWidth="200.0" text="Create Booked Service" />
+      <Button layoutX="220.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToChangeBookingScreen" prefHeight="25.0" prefWidth="200.0" text="Change Booked Service" />
+      <Button layoutX="220.0" layoutY="189.0" mnemonicParsing="false" onAction="#switchToDeleteBookingScreen" prefHeight="25.0" prefWidth="200.0" text="Delete Booking" />
+      <Button layoutX="249.0" layoutY="232.0" mnemonicParsing="false" onAction="#switchToCurrentUserSchedule" text="View my work Schedule" />
+      <Button layoutX="567.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" text="Log Out" />
       <Label fx:id="currentUserNameLabel" layoutX="15.0" layoutY="18.0" text="Current User: " />
       <Label fx:id="currentUserIDLabel" layoutX="14.0" layoutY="39.0" text="Worker ID: " />
    </children>

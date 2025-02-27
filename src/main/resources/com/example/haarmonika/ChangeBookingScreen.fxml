@@ -11,31 +11,31 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haarmonika.HelloController">
    <children>
       <Label layoutX="20.0" layoutY="60.0" prefHeight="17.0" prefWidth="270.0" text="Current Booking" />
-      <Label layoutX="350.0" layoutY="60.0" prefHeight="17.0" prefWidth="270.0" text="Wanted Booking" />
-      <TableView layoutX="350.0" layoutY="80.0" prefHeight="178.0" prefWidth="270.0">
+      <Label layoutX="350.0" layoutY="60.0" prefHeight="17.0" prefWidth="270.0" text="Desired Booking" />
+      <TableView fx:id="changeBookingDesiredBookingTableView" layoutX="350.0" layoutY="80.0" prefHeight="178.0" prefWidth="270.0">
         <columns>
           <TableColumn prefWidth="75.0" text="TimeSlot" />
           <TableColumn prefWidth="75.0" text="Barber" />
             <TableColumn prefWidth="75.0" text="Service" />
         </columns>
       </TableView>
-      <TableView layoutX="20.0" layoutY="80.0" prefHeight="178.0" prefWidth="270.0">
+      <TableView fx:id="changeBookingCurrentBookingTableView" layoutX="20.0" layoutY="80.0" prefHeight="178.0" prefWidth="270.0">
         <columns>
           <TableColumn prefWidth="75.0" text="TimeSlot" />
           <TableColumn prefWidth="75.0" text="Barber" />
             <TableColumn prefWidth="75.0" text="Service" />
         </columns>
       </TableView>
-      <Button layoutX="515.0" layoutY="264.0" mnemonicParsing="false" text="Change Booking" />
-      <Label layoutX="207.0" layoutY="268.0" text="Change Booking to this TimeSlot" />
-      <Button layoutX="507.0" layoutY="14.0" mnemonicParsing="false" text="Back to Main Menu" />
-      <Button layoutX="414.0" layoutY="264.0" mnemonicParsing="false" text="Change Time" />
-      <Button layoutX="414.0" layoutY="296.0" mnemonicParsing="false" text="Change Barber" />
-      <Button layoutX="414.0" layoutY="327.0" mnemonicParsing="false" text="Change Service" />
-      <DatePicker layoutX="20.0" layoutY="264.0" />
-      <ChoiceBox layoutX="20.0" layoutY="296.0" prefHeight="25.0" prefWidth="174.0" />
-      <ChoiceBox layoutX="20.0" layoutY="327.0" prefHeight="25.0" prefWidth="174.0" />
+      <Button layoutX="515.0" layoutY="264.0" mnemonicParsing="false" onAction="#onChangeBookingButtonClick" text="Change Booking" />
+      <Label layoutX="210.0" layoutY="268.0" text="Change Booking to this TimeSlot" />
+      <Button layoutX="507.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackToMainMenuClick" text="Back to Main Menu" />
+      <Button layoutX="414.0" layoutY="264.0" mnemonicParsing="false" onAction="#onChangeBookingTimeslotButtonClick" text="Change Time" />
+      <Button layoutX="414.0" layoutY="296.0" mnemonicParsing="false" onAction="#onChangeBookingBarberButtonClick" text="Change Barber" />
+      <Button layoutX="414.0" layoutY="327.0" mnemonicParsing="false" onAction="#onChangeBookingServiceButtonClick" text="Change Service" />
+      <DatePicker fx:id="changeBookingDatePicker" layoutX="20.0" layoutY="264.0" />
+      <ChoiceBox fx:id="changeBookingDesiredBarberChoiceBox" layoutX="20.0" layoutY="296.0" prefHeight="25.0" prefWidth="174.0" />
+      <ChoiceBox fx:id="changeBookingDesiredServiceChoiceBox" layoutX="20.0" layoutY="327.0" prefHeight="25.0" prefWidth="174.0" />
       <Label layoutX="210.0" layoutY="300.0" text="Change Barber for this TimeSlot" />
-      <Label layoutX="210.0" layoutY="331.0" text="Change Barber for this TimeSlot" />
+      <Label layoutX="210.0" layoutY="331.0" text="Change Service for this TimeSlot" />
    </children>
 </AnchorPane>
