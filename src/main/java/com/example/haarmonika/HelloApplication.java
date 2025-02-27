@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class HelloApplication extends Application {
     @Override
@@ -29,6 +30,28 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         // start test here
-        launch();
+        // Create an instance of the LoginSystem
+        LoginSystem loginSystem = LoginSystem.getInstance();
+
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for username and password
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+
+        // Attempt to log in
+        if (loginSystem.login(username, password)) {
+            System.out.println("Login successful!");
+            // You can add additional logic here, such as loading the main application
+        } else {
+            System.out.println("Login failed. Please check your username and password.");
+        }
+
+        // Close the scanner
+        scanner.close();
     }// main End
 }// End
