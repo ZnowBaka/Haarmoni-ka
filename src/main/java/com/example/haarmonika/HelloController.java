@@ -26,6 +26,7 @@ public class HelloController {
     Person currentUser = loggedInUser.getCurrentUser();
     Customer customer;
 
+
     //region Shared Screen Controls
     @FXML
     public void onLogOutButtonClick(ActionEvent event, Person currentUser) throws IOException {
