@@ -5,31 +5,31 @@ graph TD
     A --> C[Notification]
     A --> D[DataManagement]
 
-    subgraph A[SalonSystem___]
-        Medarbejder[Medarbejder___]
-        Kunde[Kunde__]
-        Tidsbestilling[Tidsbestilling___]
+    subgraph A[SalonSystem]
+        Medarbejder[Medarbejder]
+        Kunde[Kunde]
+        Tidsbestilling[Tidsbestilling]
     end
 
-    subgraph B[Authentication___]
-        Login[Login_]
-        Logout[Logout__]
+    subgraph B[Authentication]
+        Login[Login]
+        Logout[Logout]
     end
 
-    subgraph C[Notification___]
-        EmailService[Email Service___]
-        SMSService[SMS Service___]
+    subgraph C[Notification]
+        EmailService[Email Service]
+        SMSService[SMS Service]
     end
 
-    subgraph D[DataManagement____]
-        Database[Database__]
-        Backup[Backup__]
+    subgraph D[DataManagement]
+        Database[Database]
+        Backup[Backup]
     end
 
-%% Define relationships between the main system and subgraphs
-    A -->|contains__| B
-    A -->|contains__| C
-    A -->|contains__| D
-    B -->|contains__| C
-    C -->|contains__| D
+%% Define relationships between the main system and sub-graphs
+    A -->|contains| B
+    A -->|contains| C
+    A -->|contains| D
+    B -->|contains| C
+    C -->|contains| D
 ```

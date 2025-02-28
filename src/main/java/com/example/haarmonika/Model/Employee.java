@@ -7,13 +7,20 @@ public class Employee extends Person {
         super(id, LastName, FirstName, email, phoneNumber, password);
     }
 
+
     public Employee(String firstName, String lastName, String email, String phoneNumber, String password) {
         super(firstName, lastName, email, phoneNumber, password);
+
+    // Attribute specific for employees
+    public boolean isAdminStatus() {
+        return adminStatus;
+
     }
 
     public void setAdminStatus(boolean adminStatus) {
         this.adminStatus = adminStatus;
     }
+
 
     public boolean getAdminStatus() {
         return adminStatus;

@@ -73,9 +73,9 @@ public class LoginScreenView {
 
     /*
     @FXML
-    public void switchToBookingScreen(ActionEvent event) throws IOException {
+    public void switchToEmployeeSelectionScreen(ActionEvent event) throws IOException {
         storeLoggedInPersonAsCurrentUser(loggedInUser, person);
-        root = FXMLLoader.load(getClass().getResource("BookingScreen.fxml"));
+        root = FXMLLoader.load(getClass().getResource("EmployeeSelectionScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -84,9 +84,9 @@ public class LoginScreenView {
 
 
     // When the LoginSystem has confirmed that a login is successful, we then store the users data
-    public void storeLoggedInPersonAsCurrentUser(LoggedInUser loggedInUser, Person person) throws IOException {
-        person = databaseRepo.getUser;
-        loggedInUser.setCurrentUser(person);
+    public void storeLoggedInPersonAsCurrentUser(LoggedInUser loggedInUser, Person user) throws IOException {
+        user = databaseRepo.getUser;
+        loggedInUser.setCurrentUser(user);
     }
     */
 
