@@ -1,10 +1,9 @@
 package com.example.haarmonika;
 
+import com.example.haarmonika.Controller.LoginSystem;
 import com.example.haarmonika.Model.Person;
-import javafx.event.ActionEvent;
+import com.example.haarmonika.Utilities.LoggedInUser;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -12,9 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
-public class LoginScreenController {
+public class LoginScreenView {
 
     // We use a separate singleton class to verify login attempts, this way I/O from our database containing sensitive user data is kept separate from other operations
     LoginSystem loginSystem = LoginSystem.getInstance();

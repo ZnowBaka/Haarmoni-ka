@@ -2,6 +2,7 @@ package com.example.haarmonika;
 
 import com.example.haarmonika.Model.Customer;
 import com.example.haarmonika.Model.Person;
+import com.example.haarmonika.Utilities.LoggedInUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
