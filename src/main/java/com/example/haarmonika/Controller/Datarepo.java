@@ -1,8 +1,7 @@
-package com.example.haarmonika;
-import com.example.haarmonika.Model.Customer;
+package com.example.haarmonika.Controller;
 import com.example.haarmonika.Model.Employee;
+import com.example.haarmonika.Utilities.Databaseconnection;
 
-import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ public class Datarepo {
         String sql = "insert into employee (LastName,FirstName,Email,PhoneNumber,Password) values (?,?,?,?,?)";
 
         try (Connection connection = Databaseconnection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)){
 
             preparedStatement.setString(1, employee.getLastName());
             preparedStatement.setString(2, employee.getFirstName());

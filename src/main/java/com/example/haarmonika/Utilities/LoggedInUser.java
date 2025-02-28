@@ -1,4 +1,4 @@
-package com.example.haarmonika;
+package com.example.haarmonika.Utilities;
 
 import com.example.haarmonika.Model.Person;
 
