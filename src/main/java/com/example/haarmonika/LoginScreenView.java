@@ -1,7 +1,7 @@
 package com.example.haarmonika;
 
-import com.example.haarmonika.Controller.LoginSystem;
-import com.example.haarmonika.Model.Person;
+import com.example.haarmonika.Controller.LoginController;
+import com.example.haarmonika.Model.Employee;
 import com.example.haarmonika.Utilities.LoggedInUser;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -12,9 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginScreenView {
-
     // We use a separate singleton class to verify login attempts, this way I/O from our database containing sensitive user data is kept separate from other operations
-    LoginSystem loginSystem = LoginSystem.getInstance();
+    LoginController loginSystem = LoginController.getInstance();
     // DatabaseRepo
 
     private Parent root;
@@ -22,7 +21,7 @@ public class LoginScreenView {
     private Scene scene;
 
     LoggedInUser loggedInUser = LoggedInUser.getInstance();
-    Person person;
+    Employee employee;
 
 
     @FXML
@@ -54,16 +53,15 @@ public class LoginScreenView {
 
 
     // Method to handle login
-    @FXML
-    private void handleLogin() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+    private void handleLogin(Employee userLogginIn) {
+        userLogginIn.setEmail(usernameField.getText());
+        userLogginIn.setPassword(passwordField.getText());
 
         // instance af controller
 
 
         // Check login
-        if (loginSystem.checkLogin(username, password) == true) {
+        if (loginSystem.checkLogin(userLogginIn.getEmail(), userLogginIn.getPassword()) == true) {
             loginScreenLabel.setText("Login Successful");
         } else {
             loginScreenLabel.setText("Login Failed");

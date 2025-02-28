@@ -18,8 +18,22 @@ public class Person {
         this.password = password;
     }
 
-    // Trimmed down constructor for Customers
-    public Person(int id, String firstName, String lastName, String email) {
+    // Trimmed down constructor for Customers, ATM they do not have the ability to log in, or create bookings, and thus they donot need a password attribute
+    public Person(String firstName, String lastName, String email, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+
+    // Constructor for creating a new Employee without id, because the DB Auto-Increments new Ids
+    public Person(String firstName, String lastName, String email, String phoneNumber, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
     }
 
 

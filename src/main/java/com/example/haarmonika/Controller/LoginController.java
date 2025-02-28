@@ -2,9 +2,9 @@ package com.example.haarmonika.Controller;
 
 import com.example.haarmonika.Model.Person;
 
-public final class LoginSystem {
+public final class LoginController {
 
-    private static LoginSystem instance;
+    private static LoginController instance;
     private short maxLoginAttempts;
     private Person person;
     private String userLogin;
@@ -15,13 +15,13 @@ public final class LoginSystem {
     // List userPasses
 
 
-    private LoginSystem() {
+    private LoginController() {
         maxLoginAttempts = 10;
     }
 
-    public static LoginSystem getInstance() {
+    public static LoginController getInstance() {
         if (instance == null) {
-            instance = new LoginSystem();
+            instance = new LoginController();
         }
         return instance;
     }
@@ -63,8 +63,6 @@ public final class LoginSystem {
 
 
     // Methods
-
-
 
     public boolean checkLogin(String Email, String password) {
         if (!Datarepo.login(Email, password)) {
