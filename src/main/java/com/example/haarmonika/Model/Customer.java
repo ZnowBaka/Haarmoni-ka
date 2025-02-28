@@ -1,8 +1,9 @@
 package com.example.haarmonika.Model;
 
 public class Customer extends Person {
-    public Customer(int id, String firstName, String lastName, String email, String PhoneNumber) {
-        super(id, firstName, lastName, email);
+
+    public Customer(String FirstName, String LastName, String Email, String PhoneNumber) {
+        super(FirstName, LastName,Email,PhoneNumber);
     }
 
     @Override
