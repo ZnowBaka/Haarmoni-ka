@@ -8,6 +8,7 @@ public class Databaseconnection {
     //KONSANT der indeholder URL'EN TIL DATABASEN
     //JDBC URL format: jdbc:mysql://[host]:port]/[database]
     private static final String URL = "jdbc:mysql://localhost:3306/";
+
     // MySQL-brugernavn. Skal matche brugernavnet på din database.
     private static final String USER = "root";
 

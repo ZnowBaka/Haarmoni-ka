@@ -54,6 +54,11 @@ public class HelloController {
     @FXML
     private Label currentUserIDLabel;
 
+    @FXML
+    public void onAdminOptionsButtonClick(ActionEvent event) throws IOException {
+        switchToAdminSelectionScreen(event);
+    }
+
 
     //Methods
     public void setCurrentUserLabels(Person currentUser) {
@@ -229,6 +234,25 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    public void switchToAdminSelectionScreen(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("AdminSelectionScreen.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToAdminScheduleScreen(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("AdminScheduleScreen.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 
     //endregion
