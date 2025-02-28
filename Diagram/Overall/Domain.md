@@ -4,13 +4,16 @@
 ```mermaid
     classDiagram
        
-        Person <|-- Employee : Inheritance
-        Person <|-- Customer : Inheritance
-        Employee --o Booking : aggregation
-        Customer --o Booking : aggregation
+        Person <|-- Employee : Inh
+        Person <|-- Customer : Inh
+        Employee "1" --o "1" Booking : Agg
+        Customer "1" --o "1" Booking : Agg
         
         DB-->Service_Table
-        Service_Table --> Service
-        Service --o Booking : aggregation
+        Service_Table "1" --> "*" Service
+        Service "1" --o "1" Booking : Agg
+
+        
+        
                 
 ```
