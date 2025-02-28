@@ -17,8 +17,8 @@ public class Databaseconnection {
 
     // Denne metode opretter forbindelse til databasen og returnerer et Connection-objekt.
     public static Connection getConnection() {
+        // DriverManager håndterer forbindelsen til databasen.
         try {
-            // DriverManager håndterer forbindelsen til databasen.
             return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
             // Hvis noget går galt, udskrives fejlen i konsollen.
@@ -26,4 +26,4 @@ public class Databaseconnection {
             return null; // Returner null, hvis forbindelsen mislykkes.
         }
     }
-}
+}// End
