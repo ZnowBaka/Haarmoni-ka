@@ -4,12 +4,9 @@ import com.example.haarmonika.Model.Timeslot;
 
 import java.util.ArrayList;
 
-public class TimeSlotController {
+public class TimeslotController {
 
-
-
-
-    public ArrayList<Timeslot> getTimeSlots() {
+    public ArrayList<Timeslot> getTimeslots() {
         ArrayList<Timeslot> timeslots = new ArrayList<>();
         for(Timeslot timeslot : timeslots) {
             timeslots.add(timeslot);

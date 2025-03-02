@@ -8,7 +8,7 @@ public class Person {
     private String phoneNumber;
     private String password;
 
-    // Full persson constructor for employees and admins
+    // Full persson constructor for Employees
     public Person(int id, String firstName, String lastName, String email, String phoneNumber, String password) {
         this.id = id;
         this.firstName = firstName;
@@ -18,15 +18,6 @@ public class Person {
         this.password = password;
     }
 
-    // Trimmed down constructor for Customers, ATM they do not have the ability to log in, or create bookings, and thus they donot need a password attribute
-    public Person(String firstName, String lastName, String email, String phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-    }
-
-
     // Constructor for creating a new Employee without id, because the DB Auto-Increments new Ids
     public Person(String firstName, String lastName, String email, String phoneNumber, String password) {
         this.firstName = firstName;
@@ -34,6 +25,23 @@ public class Person {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
+    }
+
+    // Trimmed down constructor for Customers, ATM they do not have the ability to log in, or create bookings, and thus they do not need a password attribute
+    public Person(String firstName, String lastName, String email, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    // Another constructor for Customers, in case we need to refer to a customers id in the future
+    public Person(int id, String firstName, String lastName, String email, String phoneNumber) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
 

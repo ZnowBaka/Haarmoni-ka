@@ -65,7 +65,7 @@ public final class LoginController {
     // Methods
 
     public boolean checkLogin(String Email, String password) {
-        if (!Datarepo.login(Email, password)) {
+        if (!DatabaseRepository.login(Email, password)) {
             return false;
         } else {
             return true;

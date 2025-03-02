@@ -1,9 +1,14 @@
 package com.example.haarmonika.Model;
 
 public class Customer extends Person {
-
+    // Customer constructor without ID or Password attribute
     public Customer(String FirstName, String LastName, String Email, String PhoneNumber) {
         super(FirstName, LastName,Email,PhoneNumber);
+    }
+
+    // Customer constructor with added ID attribute
+    public Customer(int id, String firstName, String lastName, String email, String phoneNumber) {
+        super(id, firstName, lastName, email, phoneNumber);
     }
 
     @Override

@@ -1,29 +1,26 @@
 package com.example.haarmonika.Model;
 
 public class Employee extends Person {
-    private boolean adminStatus;
+    private boolean adminStatus = false;
 
+    // Constructor with ID
     public Employee(int id, String LastName, String FirstName, String email, String phoneNumber, String password) {
         super(id, LastName, FirstName, email, phoneNumber, password);
     }
 
-
+    // Constructor without ID
     public Employee(String firstName, String lastName, String email, String phoneNumber, String password) {
         super(firstName, lastName, email, phoneNumber, password);
+    }
+
 
     // Attribute specific for employees
     public boolean isAdminStatus() {
         return adminStatus;
-
     }
 
     public void setAdminStatus(boolean adminStatus) {
         this.adminStatus = adminStatus;
-    }
-
-
-    public boolean getAdminStatus() {
-        return adminStatus;
     }
 
 
@@ -88,4 +85,5 @@ public class Employee extends Person {
     }
 
 
-}
+}// End
+

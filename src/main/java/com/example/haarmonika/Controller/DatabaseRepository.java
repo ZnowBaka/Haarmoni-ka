@@ -4,12 +4,11 @@ import com.example.haarmonika.Model.Customer;
 import com.example.haarmonika.Model.Employee;
 import com.example.haarmonika.Utilities.Databaseconnection;
 
-import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Datarepo {
+public class DatabaseRepository {
     //C i Crud Creat employee
     public void creatEmployee(Employee employee) {
         String sql = "insert into employee (LastName,FirstName,Email,PhoneNumber,Password) values (?,?,?,?,?)";

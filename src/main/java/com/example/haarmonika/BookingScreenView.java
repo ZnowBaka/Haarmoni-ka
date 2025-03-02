@@ -2,17 +2,13 @@ package com.example.haarmonika;
 
 import com.example.haarmonika.Controller.BookingController;
 import com.example.haarmonika.Controller.PersonController;
-import com.example.haarmonika.Controller.TimeSlotController;
+import com.example.haarmonika.Controller.TimeslotController;
 import com.example.haarmonika.Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 
 import java.io.IOException;
@@ -23,7 +19,7 @@ public class BookingScreenView implements Initializable{
     HelloController controller = new HelloController();
     PersonController personController = new PersonController();
     BookingController bookingController = new BookingController();
-    TimeSlotController timeSlotController = new TimeSlotController();
+    TimeslotController timeSlotController = new TimeslotController();
     @FXML
     private DatePicker bookingScreenDatePicker;
 
@@ -54,8 +50,8 @@ public class BookingScreenView implements Initializable{
         String[] timeSlots = {"09:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00"};
 
         for (String day : days) {
-            for (Timeslot timeSlot : timeSlotController.getTimeSlots()) {
-                WorkWeekSchedule.add(timeSlotController.getTimeSlots().get(timeSlot).getTime());
+            for (Timeslot timeSlot : timeSlotController.getTimeslots()) {
+                WorkWeekSchedule.add(timeSlotController.getTimeslots().get(timeSlot).getTime());
             }
         }
     }
