@@ -54,7 +54,7 @@ public class DatabaseRepository {
     }
 
     //R i Crud for at read employees
-    public List<Employee> getAllEmployee() {
+    public List<Employee> getAllEmployees() {
         List<Employee> employees = new ArrayList<>();
         String sql = "select * from employee";
 

@@ -65,6 +65,11 @@
     }
     
     class DatabaseRepository {
+        +createEmployee: void
+        +createNewCustomer: void
+        +getAllEmplyees: <Employee>
+        +getCustomerFromEmail: Customer
+        +login: boolean
     }
 
     class LoggedInUser {
