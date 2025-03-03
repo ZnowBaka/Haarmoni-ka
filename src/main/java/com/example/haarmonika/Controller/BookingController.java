@@ -7,12 +7,10 @@ import java.time.LocalDateTime;
 public class BookingController {
     private Booking booking = null;
 
-    public Booking createNewBooking(String bookingTime, Timeslot timeslot, Service service, Employee barber, Customer customer) {
-        booking = new Booking(bookingTime, timeslot, service, barber, customer);
+    public Booking createNewBooking(String bookingDate, String bookingTime, int employeeFK, int customerFK, int serviceFK) {
+        booking = new Booking(bookingDate, bookingTime, employeeFK, customerFK, serviceFK);
         return booking;
     }
-
-
 
 
 }

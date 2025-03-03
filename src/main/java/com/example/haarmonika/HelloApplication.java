@@ -33,12 +33,6 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         // start test here
-        WorkDayController workDaySchedule = new WorkDayController();
-        workDaySchedule.printSchedule();
-
-        LoginController loginController = LoginController.getInstance();
-        boolean checkLoginStatus = loginController.checkLogin("bob","bobb");
-        System.out.println(checkLoginStatus);
 
         launch();
     }// main End

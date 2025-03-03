@@ -23,8 +23,8 @@ public class WorkDay {
         }
     }
 
-    public Timeslot[] getTimeslots() {
-        return workTime;
+    public Timeslot getSpecificTimeslot(int i) {
+        return workTime[i];
     }
 
     public void printTimeslots() {
@@ -35,7 +35,9 @@ public class WorkDay {
         }
     }
 
-
+    public int getLength() {
+        return workTime.length;
+    }
 
 
 }

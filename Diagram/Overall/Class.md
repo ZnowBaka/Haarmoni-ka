@@ -6,10 +6,10 @@
     Person <|-- Employee: Inh
     Person <|-- Customer: Inh
     LoggedInUser "1" *-- "1" Person: composition
-    Employee "1" --o "1" Booking: Agg
-    Customer "1" --o "1" Booking: Agg
-    Service "1" --o "1" Booking: Agg
-    Booking "*" --o "1" Timeslot: Agg
+    Employee --> Booking
+    Customer --> Booking
+    Service --> Booking
+    Booking "1" <--> "*" Timeslot
     
     Database <--> DatabaseConnection
     DatabaseConnection <--> DatabaseRepository
@@ -19,6 +19,7 @@
     DatabaseRepository --o BookingController: Agg
     
     PersonController<-->Person
+    PersonController -->BookingController
     ServiceController<-->Service
     TimeslotController<-->Timeslot
     BookingController<-->Booking

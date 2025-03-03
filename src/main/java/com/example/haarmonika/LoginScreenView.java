@@ -49,6 +49,7 @@ public class LoginScreenView {
     @FXML
     public void onExitButtonClick() {
         stage.close();
+        System.exit(0);
     }
 
 
