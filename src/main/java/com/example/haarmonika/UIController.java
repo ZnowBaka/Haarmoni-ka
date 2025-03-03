@@ -173,6 +173,7 @@ public class UIController {
     public void switchToBookingScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("BookingScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Booking screen");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -182,6 +183,7 @@ public class UIController {
     public void switchToChangeBookingScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("ChangeBookingScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Change booking");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -191,6 +193,7 @@ public class UIController {
     public void switchToDeleteBookingScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("DeleteBookingScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Booking Screen");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -200,6 +203,7 @@ public class UIController {
     public void switchToCurrentUserSchedule(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("EmployeeScheduleScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Employee schedule");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -211,6 +215,7 @@ public class UIController {
 
         root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Login Screen");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -220,6 +225,7 @@ public class UIController {
     public void switchToEmployeeSelectionScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("EmployeeSelectionScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("System controls");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -229,6 +235,7 @@ public class UIController {
     public void switchToCustomerCreationScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("CustomerCreationScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Customer creation");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -237,6 +244,7 @@ public class UIController {
     public void switchToAdminSelectionScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("AdminSelectionScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Admin system controls");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -245,8 +253,8 @@ public class UIController {
     @FXML
     public void switchToAdminScheduleScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("AdminScheduleScreen.fxml"));
-
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Admin schedule screen");
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
