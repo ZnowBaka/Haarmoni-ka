@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class BookingScreenView implements Initializable{
-    HelloController controller = new HelloController();
+    UIController controller = new UIController();
     PersonController personController = new PersonController();
     BookingController bookingController = new BookingController();
     TimeslotController timeSlotController = new TimeslotController();
@@ -48,12 +48,14 @@ public class BookingScreenView implements Initializable{
         ObservableList<Timeslot> WorkWeekSchedule = FXCollections.observableArrayList();
         String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
         String[] timeSlots = {"09:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00"};
-
+        /*
         for (String day : days) {
             for (Timeslot timeSlot : timeSlotController.getTimeslots()) {
                 WorkWeekSchedule.add(timeSlotController.getTimeslots().get(timeSlot).getTime());
             }
         }
+        */
+        return WorkWeekSchedule;
     }
 
 

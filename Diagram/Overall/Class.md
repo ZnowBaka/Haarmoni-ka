@@ -17,7 +17,12 @@
     DatabaseRepository --o ServiceController: Agg
     DatabaseRepository --o TimeslotController: Agg
     DatabaseRepository --o BookingController: Agg
-
+    
+    PersonController<-->Person
+    ServiceController<-->Service
+    TimeslotController<-->Timeslot
+    BookingController<-->Booking
+    
     class Person {
         -id: int
         -firstName: String

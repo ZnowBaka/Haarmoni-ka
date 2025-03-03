@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class CustomerCreationScreenView {
     PersonController personController = new PersonController();
-    HelloController helloController = new HelloController();
+    UIController UIController = new UIController();
     @FXML
     private TextField customerEmailTextField;
     @FXML
@@ -28,6 +28,6 @@ public class CustomerCreationScreenView {
         String firstName = customerFirstNameTextField.getText();
         String lastName = customerLastNameTextField.getText();
         personController.newCustomer(email, phoneNumber, firstName, lastName);
-        helloController.switchToBookingScreen(event);
+        UIController.switchToBookingScreen(event);
     }
 }

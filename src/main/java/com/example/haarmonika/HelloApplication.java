@@ -1,5 +1,9 @@
 package com.example.haarmonika;
 
+import com.example.haarmonika.Controller.LoginController;
+import com.example.haarmonika.Controller.WorkDayController;
+import com.example.haarmonika.Model.Timeslot;
+import com.example.haarmonika.Model.WorkDay;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -29,6 +33,13 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         // start test here
+        WorkDayController workDaySchedule = new WorkDayController();
+        workDaySchedule.printSchedule();
+
+        LoginController loginController = LoginController.getInstance();
+        boolean checkLoginStatus = loginController.checkLogin("bob","bobb");
+        System.out.println(checkLoginStatus);
+
         launch();
     }// main End
 }// End

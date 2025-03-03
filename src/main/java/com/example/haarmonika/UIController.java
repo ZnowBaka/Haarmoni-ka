@@ -2,7 +2,6 @@ package com.example.haarmonika;
 
 import com.example.haarmonika.Controller.PersonController;
 import com.example.haarmonika.Model.Customer;
-import com.example.haarmonika.Model.Employee;
 import com.example.haarmonika.Model.Person;
 import com.example.haarmonika.Utilities.LoggedInUser;
 import javafx.event.ActionEvent;
@@ -16,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloController {
+public class UIController {
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -27,7 +26,6 @@ public class HelloController {
     LoggedInUser loggedInUser = LoggedInUser.getInstance();
     Person currentUser = loggedInUser.getCurrentUser();
     Customer customer;
-
 
 
     public void resetCurrentUser(Person currentUser) {
@@ -170,7 +168,6 @@ public class HelloController {
     //endregion
 
 
-
     //region Switch Scene Controls
     @FXML
     public void switchToBookingScreen(ActionEvent event) throws IOException {
@@ -180,8 +177,6 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
     }
-
-
 
     @FXML
     public void switchToChangeBookingScreen(ActionEvent event) throws IOException {
@@ -231,10 +226,14 @@ public class HelloController {
     }
 
     @FXML
-
     public void switchToCustomerCreationScreen(ActionEvent event) throws IOException {
-
         root = FXMLLoader.load(getClass().getResource("CustomerCreationScreen.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void switchToAdminSelectionScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("AdminSelectionScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -251,6 +250,10 @@ public class HelloController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void onBackToMainMenuClick(ActionEvent event) throws IOException {
+        switchToEmployeeSelectionScreen(event);
     }
 
 

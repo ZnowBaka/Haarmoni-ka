@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haarmonika.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haarmonika.UIController">
    <children>
       <Button layoutX="46.0" layoutY="35.0" mnemonicParsing="false" onAction="#onAdminSelectionCreateEmployeeButtonClick" text="Create New Employee" />
       <Button layoutX="46.0" layoutY="78.0" mnemonicParsing="false" onAction="#onAdminSelectionModifyEmployeeButtonClick" prefHeight="25.0" prefWidth="133.0" text="Modify Employee" />

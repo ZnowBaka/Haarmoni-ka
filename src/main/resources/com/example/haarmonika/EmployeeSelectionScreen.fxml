@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haarmonika.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.haarmonika.UIController">
    <children>
       <Button layoutX="220.0" layoutY="105.0" mnemonicParsing="false" onAction="#switchToBookingScreen" prefHeight="25.0" prefWidth="200.0" text="Create Booked Service" />
       <Button layoutX="220.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToChangeBookingScreen" prefHeight="25.0" prefWidth="200.0" text="Change Booked Service" />
