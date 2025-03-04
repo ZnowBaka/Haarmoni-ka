@@ -11,7 +11,7 @@ import java.util.List;
 public class DatabaseRepository {
     //C i Crud Creat employee
     public void creatEmployee(Employee employee) {
-        String sql = "insert into employee (FirstName,LastName,Email,PhoneNumber,Password) values (?,?,?,?,?)";
+        String sql = "insert into employees (first_name,last_name,email,phone_number,password) values (?,?,?,?,?)";
 
         try (Connection connection = Databaseconnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -33,15 +33,15 @@ public class DatabaseRepository {
     }
 
     public void createNewCustomer(Customer customer) {
-        String sql = "insert into customer (fristName, lastName, phoneNumber,email) values (?,?,?,?,?)";
+        String sql = "insert into customers (first_name, last_name, phone_number,email) values (?,?,?,?,?)";
 
         try (Connection connection = Databaseconnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, customer.getFirstName());
             preparedStatement.setString(2, customer.getLastName());
-            preparedStatement.setString(3, customer.getEmail());
-            preparedStatement.setString(4, customer.getPhoneNumber());
+            preparedStatement.setString(3, customer.getPhoneNumber());
+            preparedStatement.setString(4, customer.getEmail());
 
             int rowInserted = preparedStatement.executeUpdate();
             if (rowInserted > 0) {
@@ -56,20 +56,20 @@ public class DatabaseRepository {
     //R i Crud for at read employees
     public List<Employee> getAllEmployees() {
         List<Employee> employees = new ArrayList<>();
-        String sql = "select * from employee";
+        String sql = "select * from employees";
 
         try (Connection connection = Databaseconnection.getConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
 
             while (resultSet.next()) {
-                int Id = resultSet.getInt("Id");
-                String LastName = resultSet.getString("LastName");
-                String FirstName = resultSet.getString("FirstName");
-                String Email = resultSet.getString("Email");
-                String PhoneNumber = resultSet.getString("PhoneNumber");
-                String Password = resultSet.getString("Password");
-                employees.add(new Employee(Id, LastName, FirstName, Email, PhoneNumber, Password));
+                int Id = resultSet.getInt("employee_id");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                String phoneNumber = resultSet.getString("phone_number");
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("password");
+                employees.add(new Employee(Id, firstName, lastName, phoneNumber, email, password));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -79,17 +79,18 @@ public class DatabaseRepository {
 
     public Customer getCustomerFromEmail(String email) {
 
-        String sql = "select * from customer where email = ?";
+        String sql = "select * from customers where email = ?";
         Customer customer = null;
         try (Connection connection = Databaseconnection.getConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
             while (resultSet.next()) {
-                String LastName = resultSet.getString("LastName");
-                String FirstName = resultSet.getString("FirstName");
-                String Email = resultSet.getString("Email");
-                String PhoneNumber = resultSet.getString("PhoneNumber");
-                customer = new Customer(LastName, FirstName, Email, PhoneNumber);
+                int Id = resultSet.getInt("customer_id");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                String phoneNumber = resultSet.getString("phone_number");
+                email = resultSet.getString("email");
+                customer = new Customer(firstName, lastName, phoneNumber, email);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -99,14 +100,14 @@ public class DatabaseRepository {
 
 
     // login check op imod databasen
-    public static boolean login(String Email, String password) {
+    public static boolean login(String email, String password) {
 
-        String sql = "SELECT * FROM employees WHERE Email = ? AND password = ?";
+        String sql = "SELECT * FROM employees WHERE email = ? AND password = ?";
 
         try (Connection connection = DriverManager.getConnection(sql);
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            preparedStatement.setString(1, Email);
+            preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
 
             ResultSet resultSet = preparedStatement.executeQuery();
