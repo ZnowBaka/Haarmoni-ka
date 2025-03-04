@@ -11,13 +11,13 @@ import java.util.List;
 public class DatabaseRepository {
     //C i Crud Creat employee
     public void creatEmployee(Employee employee) {
-        String sql = "insert into employee (LastName,FirstName,Email,PhoneNumber,Password) values (?,?,?,?,?)";
+        String sql = "insert into employee (FirstName,LastName,Email,PhoneNumber,Password) values (?,?,?,?,?)";
 
         try (Connection connection = Databaseconnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            preparedStatement.setString(1, employee.getLastName());
-            preparedStatement.setString(2, employee.getFirstName());
+            preparedStatement.setString(1, employee.getFirstName());
+            preparedStatement.setString(2, employee.getLastName());
             preparedStatement.setString(3, employee.getPhoneNumber());
             preparedStatement.setString(4, employee.getEmail());
             preparedStatement.setString(5, employee.getPassword());
