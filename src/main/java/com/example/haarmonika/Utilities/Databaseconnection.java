@@ -13,7 +13,7 @@ public class Databaseconnection {
     private static final String USER = "user";
 
     // MySQL-adgangskode. Sørg for at holde denne sikker og ikke dele den offentligt.
-    private static final String PASSWORD = "Klopo1.Klopo1.";
+    private static final String PASSWORD = "";
 
     // Denne metode opretter forbindelse til databasen og returnerer et Connection-objekt.
     public static Connection getConnection() {
