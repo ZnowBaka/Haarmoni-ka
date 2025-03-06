@@ -20,6 +20,6 @@
             <TableColumn prefWidth="75.0" text="Friday" />
         </columns>
       </TableView>
-      <Button layoutX="570.0" layoutY="321.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" text="Logout" />
+      <Button layoutX="570.0" layoutY="321.0" mnemonicParsing="false" onAction="#onExitButtonClick" prefHeight="25.0" prefWidth="58.0" text="Exit" />
    </children>
 </AnchorPane>

@@ -44,6 +44,13 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
+    // Constructor for creating a person login
+    public Person(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+
 
     public int getId() {
         return id;

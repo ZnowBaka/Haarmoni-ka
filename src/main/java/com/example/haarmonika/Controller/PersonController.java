@@ -19,6 +19,12 @@ public class PersonController {
         return employee;
     }
 
+    public Employee newLogin(String email, String password) {
+        Employee employee = new Employee(email, password);
+        return employee;
+    }
+
+
 
     public Customer findCustomer(String email) {
         if (databaseRepository.getCustomerFromEmail(email) == null) {

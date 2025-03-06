@@ -3,16 +3,22 @@ package com.example.haarmonika.Model;
 public class Service {
     private int serviceId;
     private String serviceName;
-    private String serviceDescription;
+    private int serviceDuration;
     private double servicePrice;
 
-    public Service(int serviceId, String serviceName, String serviceDescription, double servicePrice) {
+    public Service(int serviceId, String serviceName, int serviceDuration, double servicePrice) {
         this.serviceId = serviceId;
         this.serviceName = serviceName;
-        this.serviceDescription = serviceDescription;
+        this.serviceDuration = serviceDuration;
         this.servicePrice = servicePrice;
     }
 
+    // Constructor without Id
+    public Service(String serviceName, int serviceDuration, double servicePrice) {
+        this.serviceName = serviceName;
+        this.serviceDuration = serviceDuration;
+        this.servicePrice = servicePrice;
+    }
 
     public int getServiceId() {
         return serviceId;
@@ -30,12 +36,12 @@ public class Service {
         this.serviceName = serviceName;
     }
 
-    public String getServiceDescription() {
-        return serviceDescription;
+    public int getServiceDuration() {
+        return serviceDuration;
     }
 
-    public void setServiceDescription(String serviceDescription) {
-        this.serviceDescription = serviceDescription;
+    public void setServiceDuration(int serviceDuration) {
+        this.serviceDuration = serviceDuration;
     }
 
     public double getServicePrice() {

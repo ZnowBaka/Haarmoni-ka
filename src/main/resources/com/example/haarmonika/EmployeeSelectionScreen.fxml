@@ -10,9 +10,9 @@
       <Button layoutX="220.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToChangeBookingScreen" prefHeight="25.0" prefWidth="200.0" text="Change Booked Service" />
       <Button layoutX="220.0" layoutY="189.0" mnemonicParsing="false" onAction="#switchToDeleteBookingScreen" prefHeight="25.0" prefWidth="200.0" text="Delete Booking" />
       <Button layoutX="249.0" layoutY="232.0" mnemonicParsing="false" onAction="#switchToCurrentUserSchedule" text="View my work Schedule" />
-      <Button layoutX="567.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" text="Log Out" />
       <Label fx:id="currentUserNameLabel" layoutX="15.0" layoutY="18.0" text="Current User: " />
       <Label fx:id="currentUserIDLabel" layoutX="14.0" layoutY="39.0" text="Worker ID: " />
       <Button layoutX="272.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAdminSelectionScreen" text="Admin Options" />
+      <Button layoutX="535.0" layoutY="14.0" mnemonicParsing="false" onAction="#onExitButtonClick" text="Exit System" />
    </children>
 </AnchorPane>

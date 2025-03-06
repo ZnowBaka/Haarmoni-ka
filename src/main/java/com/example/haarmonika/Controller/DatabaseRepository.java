@@ -5,6 +5,7 @@ import com.example.haarmonika.Model.Employee;
 import com.example.haarmonika.Utilities.Databaseconnection;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,7 +105,7 @@ public class DatabaseRepository {
 
         String sql = "SELECT * FROM employees WHERE email = ? AND password = ?";
 
-        try (Connection connection = DriverManager.getConnection(sql);
+        try (Connection connection = Databaseconnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, email);
@@ -113,12 +114,28 @@ public class DatabaseRepository {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             // retunere succes hvis user og pass stemmer overens
-            return resultSet.next();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
             return false; // ved fejl retunere false
         }
     }
+
+    //nuke on start
+    public static void nukeOnStart(LocalDateTime nukeDate) {
+        String sql = "DELETE FROM Customers WHERE addTime < nukeDate";
+
+        try (Connection connection = Databaseconnection.getConnection();
+             Statement statement = connection.createStatement()) {
+
+            statement.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            e.getErrorCode();
+        }
+
+    }
+
 
 }
 

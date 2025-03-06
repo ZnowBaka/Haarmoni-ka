@@ -1,7 +1,9 @@
 package com.example.haarmonika;
 
 import com.example.haarmonika.Controller.LoginController;
+import com.example.haarmonika.Controller.PersonController;
 import com.example.haarmonika.Model.Employee;
+import com.example.haarmonika.Model.Person;
 import com.example.haarmonika.Utilities.LoggedInUser;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -11,9 +13,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javafx.event.ActionEvent;
+import java.io.IOException;
+
 public class LoginScreenView {
     // We use a separate singleton class to verify login attempts, this way I/O from our database containing sensitive user data is kept separate from other operations
     LoginController loginSystem = LoginController.getInstance();
+    PersonController personController = new PersonController();
+    UIController uiController = new UIController();
     // DatabaseRepo
 
     private Parent root;
@@ -37,11 +44,16 @@ public class LoginScreenView {
     private Label loginScreenLabel;
 
     @FXML
-    protected void onLoginButtonClick() {
+    protected void onLoginButtonClick(ActionEvent event ) throws IOException {
         try {
-
+        if (loginSystem.checkLogin(usernameField.getText(), passwordField.getText())) {
+            Person userTryingToLogin = personController.newLogin(usernameField.getText(), passwordField.getText());
+            loggedInUser = LoggedInUser.getInstance();
+            loggedInUser.setCurrentUser(userTryingToLogin);
+            uiController.switchToEmployeeSelectionScreen(event);
+        }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());;
         }
         loginScreenLabel.setText("Trying to login...");
     }

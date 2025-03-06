@@ -241,6 +241,7 @@ public class UIController {
         stage.show();
     }
 
+    @FXML
     public void switchToAdminSelectionScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("AdminSelectionScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -260,9 +261,16 @@ public class UIController {
         stage.show();
     }
 
+    @FXML
+    public void onExitButtonClick() {
+        System.exit(0);
+    }
+
+    @FXML
     public void onBackToMainMenuClick(ActionEvent event) throws IOException {
         switchToEmployeeSelectionScreen(event);
     }
+
 
 
     //endregion

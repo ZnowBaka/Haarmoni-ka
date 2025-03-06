@@ -13,6 +13,12 @@ public class Employee extends Person {
         super(firstName, lastName, email, phoneNumber, password);
     }
 
+    // Constructor for login
+    public Employee(String email, String password) {
+        super(email, password);
+
+    }
+    
 
     // Attribute specific for employees
     public boolean isAdminStatus() {

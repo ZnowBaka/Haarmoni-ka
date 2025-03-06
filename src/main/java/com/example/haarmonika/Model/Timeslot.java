@@ -14,7 +14,7 @@ public class Timeslot {
 
     @Override
     public String toString() {
-        return ("Timeslot ID: " + timeslotId + " Time: " + time);
+        return ("Time: " + time);
     }
 
     public int getTimeslotId() {
