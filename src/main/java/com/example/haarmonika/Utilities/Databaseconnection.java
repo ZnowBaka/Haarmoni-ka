@@ -10,10 +10,10 @@ public class Databaseconnection {
     private static final String URL = "jdbc:mysql://localhost:3306/salon";
 
     // MySQL-brugernavn. Skal matche brugernavnet på din database.
-    private static final String USER = "root";
+    private static final String USER = "user";
 
     // MySQL-adgangskode. Sørg for at holde denne sikker og ikke dele den offentligt.
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "Klopo1.Klopo1.";
 
     // Denne metode opretter forbindelse til databasen og returnerer et Connection-objekt.
     public static Connection getConnection() {

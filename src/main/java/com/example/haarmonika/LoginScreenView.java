@@ -6,6 +6,8 @@ import com.example.haarmonika.Model.Employee;
 import com.example.haarmonika.Model.Person;
 import com.example.haarmonika.Utilities.LoggedInUser;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -82,19 +84,7 @@ public class LoginScreenView {
 
 
 
-
     /*
-    @FXML
-    public void switchToEmployeeSelectionScreen(ActionEvent event) throws IOException {
-        storeLoggedInPersonAsCurrentUser(loggedInUser, person);
-        root = FXMLLoader.load(getClass().getResource("EmployeeSelectionScreen.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-
     // When the LoginSystem has confirmed that a login is successful, we then store the users data
     public void storeLoggedInPersonAsCurrentUser(LoggedInUser loggedInUser, Person user) throws IOException {
         user = databaseRepo.getUser;

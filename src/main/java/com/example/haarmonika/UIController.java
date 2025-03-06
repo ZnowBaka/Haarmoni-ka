@@ -1,5 +1,6 @@
 package com.example.haarmonika;
 
+import com.example.haarmonika.Controller.LoginController;
 import com.example.haarmonika.Controller.PersonController;
 import com.example.haarmonika.Model.Customer;
 import com.example.haarmonika.Model.Person;
@@ -223,6 +224,8 @@ public class UIController {
 
     @FXML
     public void switchToEmployeeSelectionScreen(ActionEvent event) throws IOException {
+        System.out.println("trying to switch EmployeeSelectionScreen");
+
         root = FXMLLoader.load(getClass().getResource("EmployeeSelectionScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("System controls");
@@ -274,6 +277,68 @@ public class UIController {
 
 
     //endregion
+
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private TextField usernameField;
+
+    @FXML
+    private Label loginScreenLabel;
+    private LoginController loginSystem = new LoginController();
+
+    @FXML
+    protected void onLoginButtonClick(ActionEvent event) throws IOException {
+        try {
+            loginScreenLabel.setText("Trying to login...");
+            System.out.println("Login button clicked");
+            Employee loginAttempt = new Employee(usernameField.getText(), passwordField.getText());
+
+
+            if (loginSystem.checkLogin(loginAttempt)) {
+                switchToEmployeeSelectionScreen(event);
+
+            } else {
+                loginScreenLabel.setText("Invalid Username or Password");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+/*
+    @FXML
+    public void onExitButtonClick() {
+        System.exit(0);
+    }
+*/
+
+    // Method to handle login
+    private void handleLogin(Employee userLogginIn) {
+        userLogginIn.setEmail(usernameField.getText());
+        userLogginIn.setPassword(passwordField.getText());
+
+        // instance af controller
+
+
+        // Check login
+        if (loginSystem.checkLogin(userLogginIn) == true) {
+            loginScreenLabel.setText("Login Successful");
+        } else {
+            loginScreenLabel.setText("Login Failed");
+        }
+    }
+
+
+
+    /*
+    // When the LoginSystem has confirmed that a login is successful, we then store the users data
+    public void storeLoggedInPersonAsCurrentUser(LoggedInUser loggedInUser, Person user) throws IOException {
+        user = databaseRepo.getUser;
+        loggedInUser.setCurrentUser(user);
+    }
+*/
 
 
 }// End
