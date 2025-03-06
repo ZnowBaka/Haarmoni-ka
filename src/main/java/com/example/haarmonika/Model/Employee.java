@@ -3,6 +3,10 @@ package com.example.haarmonika.Model;
 public class Employee extends Person {
     private boolean adminStatus = false;
 
+    public Employee() {
+        super();
+    }
+
     // Constructor with ID
     public Employee(int id, String LastName, String FirstName, String email, String phoneNumber, String password) {
         super(id, LastName, FirstName, email, phoneNumber, password);

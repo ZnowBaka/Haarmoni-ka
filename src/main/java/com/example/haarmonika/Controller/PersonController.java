@@ -12,7 +12,7 @@ public class PersonController {
         return customer;
     }
 
-    ;
+
 
     public Employee newEmployee(String firstName, String lastName, String email, String phoneNumber, String password) {
         Employee employee = new Employee(firstName, lastName, email, phoneNumber, password);

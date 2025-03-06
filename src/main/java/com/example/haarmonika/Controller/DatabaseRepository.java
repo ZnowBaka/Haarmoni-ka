@@ -99,6 +99,10 @@ public class DatabaseRepository {
         return customer;
     }
 
+    public Employee readEmployee(String email) {
+       return null;
+    }
+
 
     // login check op imod databasen
     public static boolean login(String email, String password) {
@@ -112,13 +116,20 @@ public class DatabaseRepository {
             preparedStatement.setString(2, password);
 
             ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                System.out.println("login successful");
+                return true;
+            }
+            //boolean isResultValid = resultSet.next();
 
             // retunere succes hvis user og pass stemmer overens
-            return true;
+            //System.out.println("is result valid: " + isResultValid);
+            //return isResultValid;
         } catch (Exception e) {
             e.printStackTrace();
             return false; // ved fejl retunere false
         }
+        return false;
     }
 
     //nuke on start

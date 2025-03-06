@@ -8,6 +8,10 @@ public class Person {
     private String phoneNumber;
     private String password;
 
+
+    public Person() {
+    }
+
     // Full persson constructor for Employees
     public Person(int id, String firstName, String lastName, String email, String phoneNumber, String password) {
         this.id = id;

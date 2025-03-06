@@ -1,5 +1,6 @@
 package com.example.haarmonika;
 
+import com.example.haarmonika.Controller.DatabaseRepository;
 import com.example.haarmonika.Controller.LoginController;
 import com.example.haarmonika.Controller.PersonController;
 import com.example.haarmonika.Model.Employee;
@@ -14,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
+
 import java.io.IOException;
 
 public class LoginScreenView {
@@ -21,6 +23,7 @@ public class LoginScreenView {
     LoginController loginSystem = LoginController.getInstance();
     PersonController personController = new PersonController();
     UIController uiController = new UIController();
+    DatabaseRepository databaseRepository = new DatabaseRepository();
     // DatabaseRepo
 
     private Parent root;
@@ -44,16 +47,22 @@ public class LoginScreenView {
     private Label loginScreenLabel;
 
     @FXML
-    protected void onLoginButtonClick(ActionEvent event ) throws IOException {
+    protected void onLoginButtonClick(ActionEvent event) throws IOException {
         try {
-        if (loginSystem.checkLogin(usernameField.getText(), passwordField.getText())) {
-            Person userTryingToLogin = personController.newLogin(usernameField.getText(), passwordField.getText());
-            loggedInUser = LoggedInUser.getInstance();
-            loggedInUser.setCurrentUser(userTryingToLogin);
-            uiController.switchToEmployeeSelectionScreen(event);
-        }
+            if (loginSystem.checkLogin(usernameField.getText(), passwordField.getText())) {
+                //Employee userTryingToLogin;
+                //databaseRepository.readEmployee(usernameField.getText());
+
+                //System.out.println(userTryingToLogin.toString());
+                //Person userTryingToLogin = personController.newLogin(usernameField.getText(), passwordField.getText());
+
+                //loggedInUser = LoggedInUser.getInstance();
+                //loggedInUser.setCurrentUser(userTryingToLogin);
+                uiController.switchToEmployeeSelectionScreen(event);
+            }
         } catch (Exception e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
+            ;
         }
         loginScreenLabel.setText("Trying to login...");
     }
