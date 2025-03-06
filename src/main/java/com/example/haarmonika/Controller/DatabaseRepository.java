@@ -144,21 +144,11 @@ public class DatabaseRepository {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            boolean isResultValid = resultSet.next();
-
-            while (resultSet.next()) {
-                employee.setId(resultSet.getInt("employee_id"));
-                employee.setFirstName(resultSet.getString("first_name"));
-                employee.setLastName(resultSet.getString("last_name"));
-                employee.setPhoneNumber(resultSet.getString("phone_number"));
-                employee.setEmail(resultSet.getString("email"));
-                employee.setPassword(resultSet.getString("password"));
+             if (resultSet.next()) {
+                System.out.println("login successful");
+                return true;
             }
 
-
-            // retunere succes hvis user og pass stemmer overens
-            System.out.println("is result valid: " + isResultValid);
-            return isResultValid;
         } catch (Exception e) {
             e.printStackTrace();
         }
