@@ -1,10 +1,7 @@
 package com.example.haarmonika;
 
 import com.example.haarmonika.Controller.LoginController;
-import com.example.haarmonika.Controller.PersonController;
 import com.example.haarmonika.Model.Employee;
-import com.example.haarmonika.Model.Person;
-import com.example.haarmonika.Utilities.LoggedInUser;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,12 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
+
 import java.io.IOException;
 
 public class LoginScreenView {
     // We use a separate singleton class to verify login attempts, this way I/O from our database containing sensitive user data is kept separate from other operations
     LoginController loginSystem = LoginController.getInstance();
-    PersonController personController = new PersonController();
     UIController uiController = new UIController();
     // DatabaseRepo
 
@@ -29,12 +26,6 @@ public class LoginScreenView {
     private Stage stage;
     private Scene scene;
 
-    LoggedInUser loggedInUser = LoggedInUser.getInstance();
-    Employee employee;
-
-
-    @FXML
-    private Label welcomeLabel;
 
     @FXML
     private PasswordField passwordField;
@@ -46,18 +37,22 @@ public class LoginScreenView {
     private Label loginScreenLabel;
 
     @FXML
-    protected void onLoginButtonClick(ActionEvent event ) throws IOException {
+    protected void onLoginButtonClick(ActionEvent event) throws IOException {
         try {
-        if (loginSystem.checkLogin(usernameField.getText(), passwordField.getText())) {
-            Person userTryingToLogin = personController.newLogin(usernameField.getText(), passwordField.getText());
-            loggedInUser = LoggedInUser.getInstance();
-            loggedInUser.setCurrentUser(userTryingToLogin);
-            uiController.switchToEmployeeSelectionScreen(event);
-        }
+            loginScreenLabel.setText("Trying to login...");
+            System.out.println("Login button clicked");
+            Employee loginAttempt = new Employee(usernameField.getText(), passwordField.getText());
+
+            if (loginSystem.checkLogin(loginAttempt)) {
+                System.out.println("Employee logged in");
+                uiController.switchToEmployeeSelectionScreen(event);
+
+            } else {
+                loginScreenLabel.setText("Invalid Username or Password");
+            }
         } catch (Exception e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
         }
-        loginScreenLabel.setText("Trying to login...");
     }
 
     @FXML
@@ -75,7 +70,7 @@ public class LoginScreenView {
 
 
         // Check login
-        if (loginSystem.checkLogin(userLogginIn.getEmail(), userLogginIn.getPassword()) == true) {
+        if (loginSystem.checkLogin(userLogginIn) == true) {
             loginScreenLabel.setText("Login Successful");
         } else {
             loginScreenLabel.setText("Login Failed");

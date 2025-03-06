@@ -3,6 +3,7 @@ package com.example.haarmonika;
 import com.example.haarmonika.Controller.LoginController;
 import com.example.haarmonika.Controller.PersonController;
 import com.example.haarmonika.Model.Customer;
+import com.example.haarmonika.Model.Employee;
 import com.example.haarmonika.Model.Person;
 import com.example.haarmonika.Utilities.LoggedInUser;
 import javafx.event.ActionEvent;
@@ -13,8 +14,11 @@ import javafx.scene.control.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.fxml.Initializable;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class UIController {
     private Parent root;
@@ -25,47 +29,13 @@ public class UIController {
 
     // We set our Controllers User object in our LoggedInUser Singleton, this way only a single specific Users information will be referred to if we make calls from our FXController
     LoggedInUser loggedInUser = LoggedInUser.getInstance();
-    Person currentUser = loggedInUser.getCurrentUser();
+    Employee currentUser = loggedInUser.getCurrentUser();
     Customer customer;
 
-
-    public void resetCurrentUser(Person currentUser) {
+    public void resetCurrentUser() {
+        loggedInUser = null;
         currentUser = null;
     }
-
-    //endregion
-
-
-    //region EmployeeSelectionScreen Controls
-    @FXML
-    private Label currentUserNameLabel;
-
-    @FXML
-    private Label currentUserIDLabel;
-
-    @FXML
-    public void onAdminOptionsButtonClick(ActionEvent event) throws IOException {
-        switchToAdminSelectionScreen(event);
-    }
-
-
-    //Methods
-    public void setCurrentUserLabels(Person currentUser) {
-        setCurrentUserNameLabel(currentUser);
-        setCurrentUserIDLabel(currentUser);
-    }
-
-    public void setCurrentUserNameLabel(Person currentUser) {
-        currentUserNameLabel.setText("Current User: "
-                + currentUser.getFirstName() + " " + currentUser.getLastName());
-    }
-
-    public void setCurrentUserIDLabel(Person currentUser) {
-        currentUserIDLabel.setText("Worker ID: " + currentUser.getId());
-    }
-
-
-    //endregion
 
 
     //region EmployeeSchedule Controls
@@ -212,7 +182,7 @@ public class UIController {
 
     @FXML
     public void switchToLoginScreen(ActionEvent event) throws IOException {
-        resetCurrentUser(currentUser);
+        resetCurrentUser();
 
         root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -273,7 +243,6 @@ public class UIController {
     public void onBackToMainMenuClick(ActionEvent event) throws IOException {
         switchToEmployeeSelectionScreen(event);
     }
-
 
 
     //endregion

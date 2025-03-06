@@ -135,7 +135,6 @@ public class DatabaseRepository {
         System.out.println("trying to login in DB");
 
         String sql = "SELECT * FROM employees WHERE email = ? AND password = ?";
-
         try (Connection connection = Databaseconnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
@@ -158,11 +157,12 @@ public class DatabaseRepository {
 
 
             // retunere succes hvis user og pass stemmer overens
-            return true;
+            System.out.println("is result valid: " + isResultValid);
+            return isResultValid;
         } catch (Exception e) {
             e.printStackTrace();
-            return false; // ved fejl retunere false
         }
+        return false;
     }
 
     //nuke on start
