@@ -49,7 +49,9 @@ public class LoginScreenView {
     @FXML
     protected void onLoginButtonClick(ActionEvent event) throws IOException {
         try {
+            loginScreenLabel.setText("Trying to login...");
             if (loginSystem.checkLogin(usernameField.getText(), passwordField.getText())) {
+
                 //Employee userTryingToLogin;
                 //databaseRepository.readEmployee(usernameField.getText());
 
@@ -59,12 +61,12 @@ public class LoginScreenView {
                 //loggedInUser = LoggedInUser.getInstance();
                 //loggedInUser.setCurrentUser(userTryingToLogin);
                 uiController.switchToEmployeeSelectionScreen(event);
+            } else {
+                loginScreenLabel.setText("Invalid Username or Password");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            ;
         }
-        loginScreenLabel.setText("Trying to login...");
     }
 
     @FXML
