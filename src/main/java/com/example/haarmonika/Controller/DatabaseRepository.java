@@ -100,7 +100,7 @@ public class DatabaseRepository {
     }
 
     public Employee readEmployee(String email) {
-       return null;
+        return null;
     }
 
 
@@ -133,13 +133,15 @@ public class DatabaseRepository {
     }
 
     //nuke on start
-    public static void nukeOnStart(LocalDateTime nukeDate) {
-        String sql = "DELETE FROM Customers WHERE addTime < nukeDate";
+    public static void nukeOnStart(Timestamp nukeDate) {
+        String sql = "DELETE FROM Customers WHERE Created_At < ?";
 
         try (Connection connection = Databaseconnection.getConnection();
-             Statement statement = connection.createStatement()) {
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            statement.executeQuery(sql);
+            preparedStatement.setTimestamp(1, nukeDate);
+            int rowsDeleted = preparedStatement.executeUpdate();
+            System.out.println(rowsDeleted + " rows deleted");
         } catch (SQLException e) {
             e.printStackTrace();
             e.getErrorCode();
